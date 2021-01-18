@@ -1,4 +1,5 @@
 <?php
+
 namespace ZMusicBox;
 
 class NoteBoxAPI{
@@ -88,11 +89,11 @@ class NoteBoxAPI{
 		}elseif($len === true){
 			return substr($this->buffer, $this->offset);
 		}
-		return $len === 1 ? $this->buffer{$this->offset++} : substr($this->buffer, ($this->offset += $len) - $len, $len);
+		return $len === 1 ? $this->buffer[$this->offset++] : substr($this->buffer, ($this->offset += $len) - $len, $len);
 	}
 
 	public function getByte(){
-		return ord($this->buffer{$this->offset++});
+		return ord($this->buffer[$this->offset++]);
 	}
 
 	public function getInt(){
